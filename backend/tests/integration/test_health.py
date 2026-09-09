@@ -36,3 +36,18 @@ def test_configured_frontend_origin_is_allowed(monkeypatch) -> None:
         )
     assert response.status_code == 200
     assert response.headers["access-control-allow-origin"] == settings.frontend_origin
+
+
+def test_production_frontend_origin_is_allowed(monkeypatch) -> None:
+    production_origin = "https://hsg-mt.netlify.app"
+    monkeypatch.setattr("app.main.check_connection", mongo_unavailable)
+    with TestClient(app) as client:
+        response = client.options(
+            "/api/v1/system/algorithm",
+            headers={
+                "Origin": production_origin,
+                "Access-Control-Request-Method": "GET",
+            },
+        )
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == production_origin

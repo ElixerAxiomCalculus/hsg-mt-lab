@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     admin_username: str = "researcher"
     admin_password_hash: str = ""
     frontend_origin: str = "http://localhost:5173"
+    additional_cors_origins: str = "https://hsg-mt.netlify.app"
     market_timezone: str = "Asia/Kolkata"
     quote_stale_seconds: int = Field(default=60, ge=5)
     scan_interval_seconds: int = Field(default=300, ge=30)
@@ -28,6 +29,16 @@ class Settings(BaseSettings):
     model_confidence_threshold: float = Field(default=0.65, ge=0, le=1)
     worker_lease_seconds: int = Field(default=90, ge=30)
     raw_tick_persistence: bool = False
+
+    @property
+    def allowed_cors_origins(self) -> list[str]:
+        origins = [self.frontend_origin]
+        origins.extend(
+            origin.strip()
+            for origin in self.additional_cors_origins.split(",")
+            if origin.strip()
+        )
+        return list(dict.fromkeys(origins))
 
     @field_validator("jwt_secret")
     @classmethod
