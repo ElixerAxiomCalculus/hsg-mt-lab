@@ -1,0 +1,31 @@
+symbol,company_name,exchange,enabled,duplicate_group,preferred
+RELIANCE.NS,Reliance Industries,NSE,true,RELIANCE,true
+HDFCBANK.NS,HDFC Bank,NSE,true,HDFCBANK,true
+ICICIBANK.NS,ICICI Bank,NSE,true,ICICIBANK,true
+TCS.NS,Tata Consultancy Services,NSE,true,TCS,true
+INFY.NS,Infosys,NSE,true,INFY,true
+BHARTIARTL.NS,Bharti Airtel,NSE,true,BHARTIARTL,true
+ITC.NS,ITC Limited,NSE,true,ITC,true
+LT.NS,Larsen & Toubro,NSE,true,LT,true
+SBIN.NS,State Bank of India,NSE,true,SBIN,true
+AXISBANK.NS,Axis Bank,NSE,true,AXISBANK,true
+RELIANCE.BO,Reliance Industries,BSE,true,RELIANCE,true
+HDFCBANK.BO,HDFC Bank,BSE,true,HDFCBANK,true
+ICICIBANK.BO,ICICI Bank,BSE,true,ICICIBANK,true
+TCS.BO,Tata Consultancy Services,BSE,true,TCS,true
+INFY.BO,Infosys,BSE,true,INFY,true
+BHARTIARTL.BO,Bharti Airtel,BSE,true,BHARTIARTL,true
+ITC.BO,ITC Limited,BSE,true,ITC,true
+LT.BO,Larsen & Toubro,BSE,true,LT,true
+SBIN.BO,State Bank of India,BSE,true,SBIN,true
+AXISBANK.BO,Axis Bank,BSE,true,AXISBANK,true
+AAPL,Apple Inc.,NASDAQ,true,AAPL,true
+MSFT,Microsoft Corporation,NASDAQ,true,MSFT,true
+NVDA,NVIDIA Corporation,NASDAQ,true,NVDA,true
+AMZN,Amazon.com Inc.,NASDAQ,true,AMZN,true
+GOOGL,Alphabet Inc. Class A,NASDAQ,true,GOOGL,true
+META,Meta Platforms Inc.,NASDAQ,true,META,true
+AVGO,Broadcom Inc.,NASDAQ,true,AVGO,true
+TSLA,Tesla Inc.,NASDAQ,true,TSLA,true
+COST,Costco Wholesale Corporation,NASDAQ,true,COST,true
+NFLX,Netflix Inc.,NASDAQ,true,NFLX,true
