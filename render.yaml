@@ -9,6 +9,8 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.13.5
+      - key: FRONTEND_ORIGIN
+        value: https://hsg-mt.netlify.app
       - fromGroup: hsg-mt-production
 
   - type: worker

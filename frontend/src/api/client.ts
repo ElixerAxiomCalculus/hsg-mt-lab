@@ -1,4 +1,8 @@
-export const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000'
+const defaultApiUrl = import.meta.env.DEV
+  ? 'http://localhost:8000'
+  : 'https://hsg-mt-lab.onrender.com'
+
+export const API_URL = (import.meta.env.VITE_API_URL || defaultApiUrl).replace(/\/$/, '')
 
 export class ApiFailure extends Error {
   constructor(public status: number, message: string) {
@@ -28,4 +32,3 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
   }
   return response.json() as Promise<T>
 }
-
