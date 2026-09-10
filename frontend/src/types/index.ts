@@ -51,3 +51,9 @@ export type Experiment = {
   created_at: string
   error_code?: string
 }
+
+export type WorkerStatus = {
+  status: string
+  heartbeat: string | null
+  worker_id?: string
+}

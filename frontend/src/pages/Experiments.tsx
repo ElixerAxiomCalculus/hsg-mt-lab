@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { ArrowRight, FlaskConical, LockKeyhole, Plus } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api/client'
 import { StatusPill } from '../components/Status'
 import type { Experiment, ModelStatus } from '../types'
@@ -21,6 +21,7 @@ export function Experiments() {
   const [creating, setCreating] = useState(false)
   const [exchange, setExchange] = useState<Exchange>('NSE')
   const client = useQueryClient()
+  const navigate = useNavigate()
   const query = useQuery({
     queryKey: ['experiments'],
     queryFn: () => api<Experiment[]>('/api/v1/experiments'),
@@ -38,9 +39,10 @@ export function Experiments() {
         method: 'POST',
         body: JSON.stringify(payload),
       }),
-    onSuccess: async () => {
+    onSuccess: async (item) => {
       setCreating(false)
       await client.invalidateQueries({ queryKey: ['experiments'] })
+      navigate(`/experiments/${item.id}`)
     },
   })
 
